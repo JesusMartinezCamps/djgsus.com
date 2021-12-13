@@ -41,7 +41,7 @@ describe('Suite de prueba auth', () => {
             });
         console.log('B');
     });
-/*
+    /*
     it('Should return: 200 when  jwt token is valid in Photos', (done) => {
         //Cuando la llamada no tiene la llave puesta
         chai.request(app)
