@@ -9,7 +9,7 @@ const app = require('../app');
 describe('Suite de prueba auth', () => {
     it('Should return: 400 when no data is provided', (done) => {
         chai.request(app)
-            .post('/login')
+            .post('/auth/login')
             .end((err, res) => {
                 //console.log('test que entra sin datos');
                 chai.assert.equal(res.statusCode, 400);
@@ -19,7 +19,7 @@ describe('Suite de prueba auth', () => {
     
     it('Should return: 200 when login valid', (done) => {
         chai.request(app)
-            .post('/login')
+            .post('/auth/login')
             .set('content-type', 'application/json')
             .send({user: 'gsus', password: '1234'})
             .end((err, res) => {

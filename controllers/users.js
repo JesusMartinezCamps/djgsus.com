@@ -13,14 +13,12 @@ const registerUser = (userName, password) => {
         password: hashedPwd
     }
 }
-
 const getUserIdFromUserName = (userName) => {
     for (let user in userDatabase){        
         if (userDatabase[user].userName == userName)
             return userDatabase[user];
     }
 }
-
 const checkUserCredentials = (userName, password, done) => {    
     // Comprobar que las credenciales son correctas
     let user = getUserIdFromUserName(userName);
@@ -30,6 +28,5 @@ const checkUserCredentials = (userName, password, done) => {
     else
         done('Missing user');
 }
-
 exports.registerUser = registerUser;
 exports.checkUserCredentials = checkUserCredentials;
